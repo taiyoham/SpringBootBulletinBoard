@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>掲示板新規作成</title>
+</head>
+<body>
+	
+	<h1>掲示板登録</h1>
+
+	<form method="post" action="/save" th:object="${formModel}">
+		<table>
+			<tr>
+				<th>タイトル</th>
+				<td>
+					<input name="title" required>
+				</td>
+			</tr>
+			<tr>
+				<th>内容</th>
+				<td>
+					<textarea name="content" required></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>投稿者</th>
+				<td>
+					<input name="author" required>
+				</td>
+			</tr>
+		</table>
+
+		<input type="submit" value="新規登録">
+	</form>
+	
+	<form action="/" method="get">
+		<input type="submit" value="戻る">
+	</form>
+
+</body>
+</html>

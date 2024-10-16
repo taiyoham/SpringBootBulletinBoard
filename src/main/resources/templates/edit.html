@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>掲示板編集</title>
+</head>
+<body>
+	
+	<h1>掲示板編集</h1>
+
+	<form method="post" action="/save" th:object="${formModel}">
+		<table>
+			<tr>
+				<th>作成日</th>
+				<td th:text="*{created_at}"></td>
+			</tr>
+			<tr>
+				<th>タイトル</th>
+				<td>
+					<input name="title" th:value="*{title}" required>
+				</td>
+			</tr>
+			<tr>
+				<th>内容</th>
+				<td>
+					<textarea name="content" th:text="*{content}" required></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>投稿者</th>
+				<td>
+					<input name="author" th:value="*{author}" required>
+				</td>
+			</tr>
+		</table>
+
+		<input type="hidden" th:value="*{id}" name="id">
+		<input type="submit" value="更新">
+	</form>
+	
+	<form action="/" method="get">
+		<input type="submit" value="戻る">
+	</form>
+
+</body>
+</html>
